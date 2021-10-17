@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category>
+    <pattern>*</pattern>
+    <template>I have no answer for that.</template>
+</category>
+<category>
+    <pattern>Cześć</pattern>
+    <template>Witaj, jestem TravelBOT-em. A Ty jak masz na imię?  </template>
+</category> 
+<category>
+    <pattern>Dzień dobry</pattern>
+    <template><srai>Cześćc, jestem TravelBOT-em. A Ty jak masz na imię?</srai></template>
+</category>
+<category>
+    <pattern>Witaj</pattern>
+    <template><srai>Cześć, jestem TravelBOT-em. A Ty jak masz na imię?</srai></template>
+</category>
+<category>
+    <pattern>Dobry wieczór</pattern>
+    <template><srai>Cześć, jestem TravelBOT-em. A Ty jak masz na imię?</srai></template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <template>Miło Cię poznać. Może zaplanujemy wspólną podróż?</template>
+</category>
+    <category>
+        <pattern>Nie chcę</pattern>
+        <template>W takim razie wpadnij, jak będziesz chciał się ze mną gdzieś wybrać. </template>
+    </category>
+    <category>
+        <pattern>Świetny pomysł</pattern>
+        <template>Zacznijmy od wyboru kontynentu.</template>
+    </category>
+    <category>
+        <pattern>Jasne</pattern>
+        <template>Zacznijmy od wyboru kontynentu.</template>
+    </category>
+    <category>
+        <pattern>Tak</pattern>
+        <template>Zacznijmy od wyboru kontynentu.</template>
+    </category>
+    
+    <category>
+<pattern>Jakie kontynenty mam do wyboru</pattern>
+<template>Wszystkie, masz 7 możliwości. Są to: Afryka, Ameryka Południowa, Ameryka Północna, Antarktyda, Australia, Azja, Europa.</template>
+</category>
+<category>
+<pattern>Czy powiesz mi jakie * </pattern>
+<template><srai>Jakie <star/></srai></template>
+</category>
+
+<category>
+<pattern>Wybieram *</pattern>
+<template>Dlaczego akurat to wybierasz</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Dlaczego akurat to wybierasz</that>
+<template>
+ <set name="to"><star/></set> - to brzmi zachęcająco. Wezmę sobie Twoje słowa '<get name="to"/>' do serca i zorganizujemy razem tą podroż. Teraz skupmy się na państwie. Jaki kierunek tego kontynetu wybieramy?
+</template>
+</category>
+
+<category>
+<pattern>zachodnia część tego kontynentu będzie dobrym pomysłem</pattern>
+<template>tak w sumie też o tym myślałem</template>
+</category>
+<category>
+<pattern>wschodnia część tego kontynetu</pattern>
+<template>nie, tam może być niebezpiecznie</template>
+</category>
+<category>
+<pattern>południowa część tego kontynetu</pattern>
+<template>nie, słyszałem złe opinie na ten temat </template>
+</category>
+<category>
+<pattern>północna część tego kontynetu</pattern>
+<template>tak, podoba mi się ten pomysł</template>
+</category>
+<category>
+<pattern>Czy *</pattern>
+<template>Sadze, że <srai><star/></srai>. Podaj w końcu konkretne państwo.</template>
+</category>
+<category>
+<pattern>WYBIERAM *</pattern>
+<template>Swietny wybór, jak na to wpadłaś</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Swietny wybór, jak na to wpadłaś</that>
+<template>
+ <set name="to"><star/></set> - swietny argument. Też uważam, że '<get name="to"/>'. Przejdzmy dalej. Mamy jeszcze sporo rzecy do obgadania.
+</template>
+</category>
+
+<topic name="PODROZ">
+<category>
+<pattern>Pociąg *</pattern>
+<template>
+<random>
+<li>Wolisz latać samolotem ?</li>
+<li>A może pojedziemy samochodem ?</li>
+<li>Trudna decyzja, ale jest też opcja autostopu co Ty na to?</li>
+</random>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<template>Nie jestem zdecydowany. Podejmiemy tą decyzje jutro</template>
+</category>
+<category>
+<pattern>Dobrze</pattern>
+<template><think><set name="topic">*</set></think>Może przejdziemy do daty. To ważna sprawa. Jaki dzień proponujesz?</template>
+</category>
+</topic>
+<category>
+<pattern>Co *</pattern>
+<template>Może środek transportu</template>
+</category>
+<category>
+<pattern>Mamy dużo możliwości</pattern>
+<template><think><set name="topic">PODROZ</set></think>Jest ich kilka. Czym najbardziej lubisz podróżować pociągiem?</template>
+</category>
+
+
+</aiml>
